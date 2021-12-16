@@ -1,4 +1,4 @@
-# whipfs - nodejs api hosted on google cloud(https://whipfs.web.app)
+# whipfs - nodejs api
 
 
 ## End points

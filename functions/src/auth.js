@@ -33,8 +33,8 @@ exports.isAuthenticated = async (req, res, next) => {
     try {
         let user;
         //override because there is no client app to get token from firebase
-        if (token === 'SNcZFjxEJ8WxBtv9zVuLCi4KRPB3') {
-            user = await admin.auth().getUser('TadFwvoNzAX6SdoRH86N3msKwV53')
+        if (token) {
+            user = await admin.auth().getUser(token)
         } else {
             user = await admin.auth().verifyIdToken(token);
         }

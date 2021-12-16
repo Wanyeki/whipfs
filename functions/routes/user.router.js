@@ -15,8 +15,8 @@ router.post('/register', async (req, res) => {
     try {
         const uid = await createUser({ email, password }, { firstName, lastName, phoneNumber, is_premium: false })
         res.json({
-            message: "userCreated",
-            uid
+            message: "userCreated, use token to make other requests",
+            token:uid
         })
     } catch (err) {
         res.status(500).json({

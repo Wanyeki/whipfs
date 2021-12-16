@@ -36,6 +36,9 @@ post: https://whipfs.web.app/premium/activate
     }
 }
 ```
+```
+follow link after payment and enter 12345 as otp
+```
 ```json
 {"Authorization":"Bearer {token}"}
 ```

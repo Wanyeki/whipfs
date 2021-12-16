@@ -16,7 +16,7 @@ router.post('/register', async (req, res) => {
         const uid = await createUser({ email, password }, { firstName, lastName, phoneNumber, is_premium: false })
         res.json({
             message: "userCreated, use token to make other requests",
-            token:uid
+            token: uid
         })
     } catch (err) {
         res.status(500).json({
@@ -29,12 +29,16 @@ router.post('/register', async (req, res) => {
 
 router.get('/get', isAuthenticated, async (req, res) => {
     const subscriptions = await allSubscriptions();
+
     const subscription = subscriptions.data.find(s => {
         return s.customer.customer_email == res.user.email
     })
-    const is_premium = subscription.status == "active"
-    if (is_premium != res.user.is_premium) {
-        activatePremium(res.user, false)
+    let is_premium=false;
+    if (subscription) {
+        is_premium = subscription.status == "active"
+        if (is_premium != res.user.is_premium) {
+            activatePremium(res.user, false)
+        }
     }
     res.user.is_premium = is_premium
     res.json(res.user)

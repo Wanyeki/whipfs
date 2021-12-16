@@ -16,7 +16,11 @@ router.post('/activate', isAuthenticated, async (req, res) => {
     try {
         const resp = await activatePayment2(res.user, card)
         console.log(resp)
-        res.json(resp)
+        res.json({
+            message:"success follow the link to complete payment",
+            card:resp.data.card,
+            link:resp.meta.authorization.redirect
+        })
         activatePremium(res.user);
     } catch (err) {
         console.log(err)

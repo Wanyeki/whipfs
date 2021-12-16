@@ -56,7 +56,7 @@ exports.activatePayment2 = async (user, card) => {
         phone_number: user.phonenumber,
         fullname: user.firstName + ' ' + user.lastName,
         preauthorize: false,
-        redirect_url: 'https://65d1-154-152-168-104.ngrok.io/callbacks/paymentReceived',
+        redirect_url: 'https://whipfs.web.app/callbacks/paymentReceived',
         client_ip: '154.123.220.1',
         device_fingerprint: '62wd23423rq324323qew1',
         meta: { flightID: '123949494DC', sideNote: 'This is a side note to track this call' },

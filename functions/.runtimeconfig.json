@@ -1,0 +1,8 @@
+{
+  "flutterwave": {
+    "key": "FLWSECK_TEST-8e2014cbaeb79d3933e39c58ab7f3f99-X",
+    "public": "FLWPUBK_TEST-e380397f1abf2d89e8e919bb4680f011-X",
+    "sub_link": "https://ravesandbox.flutterwave.com/pay/r4vhjgbr8euk",
+    "enc_key": "FLWSECK_TEST16487a44d36a"
+  }
+}
